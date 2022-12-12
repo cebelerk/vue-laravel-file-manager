@@ -103,7 +103,6 @@ export default {
             if (!alreadySelected) {
                 // add new selected item
                 this.$store.commit(`fm/${this.manager}/setSelected`, { type, path });
-                this.$store.commit(`fm/${this.manager}/changeSelected`, { type, path });
             } else {
                 // remove selected item
                 this.$store.commit(`fm/${this.manager}/removeSelected`, { type, path });
