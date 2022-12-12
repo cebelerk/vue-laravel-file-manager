@@ -48,6 +48,14 @@ export default {
         },
 
         /**
+         * Insert - menu item status - show or hide
+         * @returns {boolean|*}
+         */
+        insertRule() {
+            return this.firstItemType === 'file' && this.canEdit(this.selectedItems[0].extension);
+        },
+
+        /**
          * Select - menu item status - show or hide
          * @returns {boolean|null}
          */

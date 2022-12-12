@@ -24,6 +24,7 @@ const ru = {
         upload: 'Загрузить',
         uploadSelect: 'Выбрать файлы',
         hidden: 'Скрытые файлы',
+        insert: 'Выбрать',
     },
     clipboard: {
         actionType: 'Тип операции',
@@ -49,6 +50,7 @@ const ru = {
         edit: 'Редактировать',
         audioPlay: 'Воспроизвести',
         videoPlay: 'Воспроизвести',
+        insert: 'Выбрать',
     },
     info: {
         directories: 'Папок:',

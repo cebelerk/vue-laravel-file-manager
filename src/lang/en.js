@@ -24,6 +24,7 @@ const en = {
         upload: 'Upload',
         uploadSelect: 'Select files',
         hidden: ' Hidden files',
+        insert: 'Insert',
     },
     clipboard: {
         actionType: 'Type',
@@ -49,6 +50,7 @@ const en = {
         edit: 'Edit',
         audioPlay: 'Play',
         videoPlay: 'Play',
+        insert: 'Insert',
     },
     info: {
         directories: 'Folders:',

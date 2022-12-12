@@ -100,20 +100,13 @@ export default {
             // search in selected array
             const alreadySelected = this.selected[type].includes(path);
 
-            // if pressed Ctrl -> multi select
-            if (event.ctrlKey || event.metaKey) {
-                if (!alreadySelected) {
-                    // add new selected item
-                    this.$store.commit(`fm/${this.manager}/setSelected`, { type, path });
-                } else {
-                    // remove selected item
-                    this.$store.commit(`fm/${this.manager}/removeSelected`, { type, path });
-                }
-            }
-
-            // single select
-            if (!event.ctrlKey && !alreadySelected && !event.metaKey) {
+            if (!alreadySelected) {
+                // add new selected item
+                this.$store.commit(`fm/${this.manager}/setSelected`, { type, path });
                 this.$store.commit(`fm/${this.manager}/changeSelected`, { type, path });
+            } else {
+                // remove selected item
+                this.$store.commit(`fm/${this.manager}/removeSelected`, { type, path });
             }
         },
 

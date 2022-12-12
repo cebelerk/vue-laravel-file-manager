@@ -113,6 +113,15 @@
                     >
                         <i class="bi" v-bind:class="[hiddenFiles ? 'bi-eye-fill' : 'bi-eye-slash-fill']" />
                     </button>
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        v-bind:disabled="insertDisabled"
+                        v-bind:title="lang.btn.insert"
+                        v-on:click="insertSelected"
+                    >
+                        <i class="bi bi-check"></i>
+                    </button>
                 </div>
             </div>
             <div class="col-auto text-right">
@@ -247,6 +256,14 @@ export default {
         hiddenFiles() {
             return this.$store.state.fm.settings.hiddenFiles;
         },
+
+        /**
+         * Insert button state
+         * @returns {boolean}
+         */
+        insertDisabled() {
+            return this.$store.state.fm[this.activeManager].selected.files.length <= 0;
+        },
     },
     methods: {
         /**
@@ -303,6 +320,17 @@ export default {
          */
         toggleHidden() {
             this.$store.commit('fm/settings/toggleHiddenFiles');
+        },
+
+        /**
+         * Insert
+         */
+        insertSelected() {
+            window.dispatchEvent(
+                new CustomEvent('fm:insert', {
+                    detail: { files: this.$store.getters['fm/selectedItems'] },
+                })
+            );
         },
 
         /**

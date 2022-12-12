@@ -64,6 +64,17 @@ export default {
         /**
          * Select file
          */
+        insertAction() {
+            window.dispatchEvent(
+                new CustomEvent('fm:insert', {
+                    detail: { files: this.$store.getters['fm/selectedItems'] },
+                })
+            );
+        },
+
+        /**
+         * Select file
+         */
         selectAction() {
             // file callback
             this.$store
