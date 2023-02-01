@@ -131,7 +131,9 @@ export default {
                 })
                 .then((response) => {
                     if (response.data.result.status === 'success') {
-                        this.url = response.data.url;
+                        const url = new URL(response.data.url);
+
+                        this.url = url.pathname;
                     }
                 });
         },
